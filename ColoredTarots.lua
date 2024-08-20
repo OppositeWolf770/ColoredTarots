@@ -7,30 +7,14 @@
 
 ------------------------------------------------------------------
 --------------------- MOD CODE -----------------------------------
-function SMODS.INIT.ColoredTarots()
-    sendDebugMessage("Starting \"Colored Tarots\" Mod...")
+sendDebugMessage("Starting \"Colored Tarots\" Mod...")
 
-    local colored_tarots_mod = SMODS.findModByID("ColoredTarots")
-
-    local normalFilePath = 'Tarots.png'
-
-    local filePath = ''
-
-    sendDebugMessage("Texture on" .. normalFilePath)
-    filePath = normalFilePath
-
-    local sprite_tarots = SMODS.Sprite:new(
-        'Tarot',
-        colored_tarots_mod.path,
-        filePath,
-        71, 95,
-        'asset_atli'
-    )
-
-    sprite_tarots:register()
-end
-
-
-
+SMODS.Atlas{
+    key = 'Tarot',
+    path = 'Tarots.png',
+    px = 71,
+    py = 95,
+    prefix_config = { key = false }
+}
 ------------------------------------------------------------------
 --------------------- MOD CODE END--------------------------------
